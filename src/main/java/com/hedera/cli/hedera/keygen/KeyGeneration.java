@@ -55,7 +55,6 @@ public class KeyGeneration implements Runnable {
     hgcSeed = new HGCSeed(CryptoUtils.getSecureRandomData(32));
     System.out.println(hgcSeed);
     mnemonic = generateMnemonic(hgcSeed);
-    System.out.println("OLA");
     System.out.println(mnemonic);
     generateKeysAndWords(hgcSeed, mnemonic);
   }
