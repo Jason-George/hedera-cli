@@ -144,4 +144,17 @@ public class KeyGeneration implements Runnable {
     List<String> mnemonic = new Mnemonic().toMnemonic(entropy);
     return mnemonic;
   }
+         
+   @Override
+    public void executeSubCommand(InputReader inputReader, String... args) {
+        if (args.length == 0) {
+            CommandLine.usage(this, System.out);
+        } else {
+            try {
+                new CommandLine(this).execute(args);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
