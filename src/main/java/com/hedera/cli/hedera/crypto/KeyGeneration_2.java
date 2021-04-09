@@ -9,8 +9,13 @@ import lombok.NoArgsConstructor;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import lombok.Getter;
+import lombok.Setter;
 import picocli.CommandLine.Parameters;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.concurrent.TimeoutException;
 import javax.crypto.ShortBufferException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -20,11 +25,18 @@ import java.util.stream.Collectors;
 
 @NoArgsConstructor
 @Getter
+@Setter
 @Component
 @Command(name = "generate",
          description = "@|fg(225) Transfer hbars to a single account|@%n",
          helpCommand = true)
 public class KeyGeneration implements Runnable {
+         
+  @Autowired
+  private Hedera hedera;
+
+  @Autowired
+  private ShellHelper shellHelper;
 
   private List<String> mnemonic;
   private HGCSeed hgcSeed;
@@ -55,9 +67,9 @@ public class KeyGeneration implements Runnable {
   @Override
   public void run() {
     System.out.println("KeyGeneration");
-    hgcSeed = new HGCSeed(CryptoUtils.getSecureRandomData(32));
-    mnemonic = generateMnemonic(hgcSeed);
-    generateKeysAndWords(hgcSeed, mnemonic);
+    //hgcSeed = new HGCSeed(CryptoUtils.getSecureRandomData(32));
+    //mnemonic = generateMnemonic(hgcSeed);
+    //generateKeysAndWords(hgcSeed, mnemonic);
   }
 
   public List<String> generateMnemonic(HGCSeed hgcSeed) {
