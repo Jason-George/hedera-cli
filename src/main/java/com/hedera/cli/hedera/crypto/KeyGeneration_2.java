@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import lombok.NoArgsConstructor;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
+import lombok.Getter;
+import picocli.CommandLine.Parameters;
 
 import javax.crypto.ShortBufferException;
 import java.security.InvalidKeyException;
@@ -17,6 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @NoArgsConstructor
+@Getter
 @Component
 @Command(name = "generate",
          description = "@|fg(225) Transfer hbars to a single account|@%n",
