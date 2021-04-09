@@ -1,4 +1,4 @@
-package com.hedera.cli.hedera.keygen;
+package com.hedera.cli.hedera.crypto;
 
 import com.hedera.cli.hedera.bip39.Mnemonic;
 import com.hedera.cli.hedera.bip39.MnemonicException;
