@@ -45,7 +45,7 @@ public class KeyGeneration_2 implements Runnable,Operation {
      ///private List<String> mnemonic;
      //private HGCSeed hgcSeed;
 
-     @Parameters(index = "0", description = "working on it")
+     //@Parameters(index = "0", description = "working on it")
 
      @Override
      public void run() {
@@ -55,7 +55,7 @@ public class KeyGeneration_2 implements Runnable,Operation {
     //hgcSeed = new HGCSeed(CryptoUtils.getSecureRandomData(32));
     //mnemonic = generateMnemonic(hgcSeed);
     //generateKeysAndWords(hgcSeed, mnemonic);
-  }
+    }
          
      @Override
      public void executeSubCommand(InputReader inputReader, String... args) {
