@@ -51,7 +51,8 @@ public class KeyGeneration_2 implements Runnable,Operation {
      @Override
      public void run() {
               
-      System.out.println("KeyGeneration");
+      //System.out.println("KeyGeneration");
+        shellHelper.printError("KEY_GENERATIOn_2");
     //hgcSeed = new HGCSeed(CryptoUtils.getSecureRandomData(32));
     //mnemonic = generateMnemonic(hgcSeed);
     //generateKeysAndWords(hgcSeed, mnemonic);
